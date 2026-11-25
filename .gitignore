@@ -1,6 +1,9 @@
-node_modules
-dist
-.DS_Store
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
+.env
+*.db
 *.log
-tests/dist
-
+.DS_Store
