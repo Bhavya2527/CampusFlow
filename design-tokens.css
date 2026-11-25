@@ -1,0 +1,142 @@
+/* ==========================================================================
+   CampusFlow Design Tokens & Styles
+   Created by: Member 1 (Design Systems & Shared UI Lead)
+   ========================================================================== */
+
+:root {
+  /* Brand Palette */
+  --cf-primary: #059669; /* Emerald 600 */
+  --cf-primary-hover: #047857;
+  --cf-primary-light: #ecfdf5;
+  --cf-primary-border: #a7f3d0;
+  
+  --cf-accent: #6366f1; /* Indigo 500 */
+  --cf-accent-hover: #4f46e5;
+  --cf-accent-light: #eef2ff;
+
+  --cf-women-safe: #ec4899; /* Pink 500 */
+  --cf-women-safe-hover: #db2777;
+  --cf-women-safe-light: #fdf2f8;
+  --cf-women-safe-border: #fbcfe8;
+
+  /* Neutral Spectrum */
+  --cf-bg: #f8fafc;
+  --cf-surface: #ffffff;
+  --cf-surface-secondary: #f1f5f9;
+  --cf-border: #e2e8f0;
+  --cf-border-hover: #cbd5e1;
+
+  --cf-text-primary: #0f172a;
+  --cf-text-secondary: #475569;
+  --cf-text-muted: #94a3b8;
+  --cf-text-inverse: #ffffff;
+
+  /* Status Tokens */
+  --cf-success: #10b981;
+  --cf-success-bg: #ecfdf5;
+  --cf-warning: #f59e0b;
+  --cf-warning-bg: #fffbeb;
+  --cf-danger: #ef4444;
+  --cf-danger-bg: #fef2f2;
+  --cf-info: #3b82f6;
+  --cf-info-bg: #eff6ff;
+
+  /* Elevation */
+  --cf-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --cf-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --cf-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --cf-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --cf-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Radius */
+  --cf-radius-sm: 6px;
+  --cf-radius-md: 10px;
+  --cf-radius-lg: 16px;
+  --cf-radius-xl: 24px;
+  --cf-radius-full: 9999px;
+
+  /* Font */
+  --cf-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--cf-font);
+  background-color: var(--cf-bg);
+  color: var(--cf-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Utility Touch Target */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Seat Availability Bar */
+.seat-bar-container {
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+.seat-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
