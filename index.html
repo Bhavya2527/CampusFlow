@@ -1,16 +1,70 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CampusFlow - Dynamic Campus Ride Pooling</title>
-    <!-- Leaflet CSS bundled locally or loaded -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  </head>
-  <body class="bg-slate-950 text-slate-100 overflow-hidden select-none">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#059669">
+  <meta name="description" content="CampusFlow - Official Student Transit & Ride Booking Portal. Book electric campus shuttles, eco-vans, and women-safe corridors.">
+  <title>CampusFlow | Student Ride Booking</title>
+  <link rel="icon" href="data:,">
 
+  <!-- Tailwind CSS via CDN for rapid responsive layout utilities -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            campus: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- CampusFlow Design Tokens & Styles (Member 1) -->
+  <link rel="stylesheet" href="./src/styles/design-tokens.css">
+</head>
+<body class="min-h-full flex flex-col bg-slate-50 text-slate-900 font-sans antialiased selection:bg-emerald-200 selection:text-emerald-900">
+
+  <!-- Header Mount (Member 1 Shared Component) -->
+  <div id="header-root"></div>
+
+  <!-- Main Student Dashboard Mount (Member 2 Experience) -->
+  <main id="dashboard-root" class="flex-1 pb-16"></main>
+
+  <!-- Footer Navigation / Information -->
+  <footer class="border-t border-slate-200/80 bg-white py-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="flex items-center space-x-2">
+        <span class="font-bold text-slate-800">CampusFlow Transit System</span>
+        <span>•</span>
+        <span>Green Corridor Initiative</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span class="text-emerald-700 font-medium">🌱 100% Zero Emission EV Fleet</span>
+        <span>•</span>
+        <span class="text-pink-700 font-medium">🛡️ SafeRide+ Protected</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Mount Container -->
+  <div id="cf-modal-root"></div>
+
+  <!-- Toast Notification Mount Container -->
+  <div id="cf-toast-container"></div>
+
+  <!-- Application Bootstrap -->
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
